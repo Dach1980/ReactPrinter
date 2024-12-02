@@ -6,19 +6,19 @@ import OldPrice from "./old-price.jsx";
 import Price from "./price.jsx";
 import Title from "./title";
 
-function ProductPage() {
+function ProductPage({product}) {
     return (
         <section>
-            <Title />
-            <Code />
+            <Title>{product.name}</Title>
+            <Code>{product.code}</Code>
             <div style={{ display: "flex" }}>
-                <Gallery />
+                <Gallery src={product.src} alt={product.name}/>
                 <div>
                     <p>
-                        Цена: <OldPrice /> <Price />
+                        Цена: <OldPrice value={product.oldPrice}/> <Price value={product.price}/>
                     </p>
                     <div>
-                        Количество: <Counter />
+                        Количество: <Counter></Counter>
                     </div>
                     <p>
                         <span>Доставка:</span> 1 апреля
@@ -26,7 +26,7 @@ function ProductPage() {
                     <button type="button">Купить</button>
                 </div>
             </div>
-            <Description />
+            <Description text={product.description}/>
         </section >
     );
 }
