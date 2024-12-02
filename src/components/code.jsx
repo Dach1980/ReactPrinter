@@ -1,5 +1,5 @@
-function Code() {
-    return <small>Артикул: 2840367</small>
+function Code({children}) {
+    return <small>Артикул: {children}</small>
 }
 
 export default Code;
