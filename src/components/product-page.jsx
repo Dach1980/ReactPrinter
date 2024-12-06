@@ -1,3 +1,4 @@
+import React from "react";
 import Code from "./code.jsx";
 import Comments from "./comments.jsx";
 import Counter from "./counter.jsx";
