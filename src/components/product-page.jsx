@@ -1,10 +1,11 @@
-import Code from "./code";
+import Code from "./code.jsx";
+import Comments from "./comments.jsx";
 import Counter from "./counter.jsx";
 import Description from "./description.jsx";
-import Gallery from "./gallery";
-import OldPrice from "./old-price.jsx";
-import Price from "./price.jsx";
-import Title from "./title";
+import FullPrice from "./full-price.jsx";
+import Gallery from "./gallery.jsx";
+import Popularity from "./popularity.jsx";
+import Title from "./title.jsx";
 
 function ProductPage({product}) {
     return (
@@ -15,18 +16,21 @@ function ProductPage({product}) {
                 <Gallery src={product.src} alt={product.name}/>
                 <div>
                     <p>
-                        Цена: <OldPrice value={product.oldPrice}/> <Price value={product.price}/>
+                        Цена: {" "}
+                        <FullPrice oldPrice={product.oldPrice} price={product.price} />
                     </p>
                     <div>
-                        Количество: <Counter></Counter>
+                        Количество: <Counter/>
                     </div>
                     <p>
-                        <span>Доставка:</span> 1 апреля
+                        <span>Доставка:</span> {product.delivery}
                     </p>
                     <button type="button">Купить</button>
+                    <Popularity count={product.comments.length}/>
                 </div>
             </div>
             <Description text={product.description}/>
+            <Comments comments={product.comments}/>
         </section >
     );
 }
