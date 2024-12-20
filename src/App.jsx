@@ -1,6 +1,5 @@
-import './App.css'
-import { product } from './components/mock.jsx';
-import ProductPage from './components/product-page.jsx';
+import { product } from './components/mock/mock.jsx';
+import ProductPage from './components/product-page/product-page.jsx';
 
 function App() {
 
