@@ -6,9 +6,4 @@ margin: 0;
 font-size: ${(props) => (props.small ? 20 : 34)}px;
 `
 
-/*
-function Title({children}) {
-    return <h1>{children}</h1>;
-}
-*/
 export default Title;

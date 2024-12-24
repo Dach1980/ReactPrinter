@@ -4,12 +4,13 @@ const Tabs = ({ tabs, activeTab = 0 }) => {
     return (
         <div>
             <TitleList>
-                {tabs && tabs.length &&
+                {tabs && 
+                tabs.length &&
                     tabs.map((item, index) => {
                         if (index === activeTab) {
                             return (
                                 <TitleButton active key={item.title}>
-                                    <TitleText small active>
+                                    <TitleText small active as="h2">
                                         {item.title}
                                     </TitleText>
                                 </TitleButton>
@@ -17,7 +18,7 @@ const Tabs = ({ tabs, activeTab = 0 }) => {
                         }
                         return (
                             <TitleButton key={item.title}>
-                                <TitleText small>
+                                <TitleText small as="h2">
                                     {item.title}
                                 </TitleText>
                             </TitleButton>
