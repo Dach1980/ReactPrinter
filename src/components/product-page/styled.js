@@ -21,6 +21,7 @@ export const StyledProductPage = styled.article`
 
 export const Header = styled.header`
   margin-bottom: ${(props) => props.theme.indent};
+
 `;
 
 export const ProductWrapper = styled.section`
