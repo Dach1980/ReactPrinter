@@ -22,7 +22,8 @@ padding-top: 10px;
 `;
 
 export const TitleText = styled(Title)`
-color: ${(props) => (props.active ? "#333333" : "#888888")}
+color: ${(props) => 
+  props.active ? props.theme.textColor : props.theme.textColorMuted}
 `;
 
 export const Content = styled.div`
