@@ -4,9 +4,15 @@ import { StyledCounter, Value } from "./styled";
 function Counter({ className }) {
     return (
         <StyledCounter className={className}>
-            <Button size="small">-</Button>
+            <Button 
+            size="small"
+            onClick={() => console.log("уменьшение счётчика на 1")}
+            >-</Button>
             <Value>1</Value>
-            <Button size="small">+</Button>
+            <Button 
+            size="small"
+            onClick={() => console.log("увеличение счётчика на 1")}
+            >+</Button>
         </StyledCounter >
     );
 }
