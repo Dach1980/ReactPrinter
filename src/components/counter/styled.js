@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 export const StyledCounter = styled.span`
     display: inline-flex;
-    vertical-align: middle;
 `;
 
-export const Value = styled.span`
+export const Value = styled.input`
     font-size: 20px;
-    font-weight: bold;
-    vertical-align: middle;
-    padding-left: 10px;
-    padding-right: 10px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  width: auto;
+  display: inline-block;
+  text-align: center;
 `;

@@ -23,8 +23,7 @@ const Button = styled.button`
 
     &:active,
     &:hover {
-
-    background-color: ${(props) => props.theme.buttonColor};
+    background-color: ${(props) => props.theme.buttonHover};
     }
 
     &:active {
