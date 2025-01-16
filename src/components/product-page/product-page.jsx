@@ -17,11 +17,15 @@ import {
     PageFullPrice,
     DeliveryValue
 } from "./styled";
+import Order from "../order/order.jsx";
+import Accordion from "../accordion/accordion.jsx";
+import PopUp from "../../popup/popup.jsx";
 
-function ProductPage({ product }) {
-const [productCount, setProductCount] = useState(1);
-const price = product.price * productCount;
-const oldPrice = product.oldPrice * productCount;
+function ProductPage({ product, showInfoInAccordion }) {
+    const [productCount, setProductCount] = useState(1);
+    const [isShowPopup, setIsShowPopup] = useState(false);
+    const price = product.price * productCount;
+    const oldPrice = product.oldPrice * productCount;
 
     const tabs = [
         {
@@ -55,25 +59,35 @@ const oldPrice = product.oldPrice * productCount;
                     </ProductInfoLine>
                     <ProductInfoLine>
                         Количество: {" "}
-                        <PageCounter 
-                        value={productCount} 
-                        minValue={1}
-                        onChange={setProductCount}
+                        <PageCounter
+                            value={productCount}
+                            minValue={1}
+                            onChange={setProductCount}
                         />
                     </ProductInfoLine>
                     <ProductInfoLine>
                         <span>Доставка:</span>{" "}
                         <DeliveryValue>{product.delivery}</DeliveryValue>
                     </ProductInfoLine>
-                    <BuyButton 
-                    size="large"
-                    onClick={() => console.log("открытие окна оформления заказа")}
+                    <BuyButton
+                        size="large"
+                        onClick={() => {
+                            setIsShowPopup(true)
+                            console.log("открытие окна оформления заказа")
+                        }}
                     >Купить
                     </BuyButton>
                     <Popularity count={product.comments.length} />
                 </ProductInfo>
             </ProductWrapper>
-            <Tabs tabs={tabs} />
+            {showInfoInAccordion ? <Accordion items={tabs} /> : <Tabs tabs={tabs} />}
+            <PopUp
+                isShow={isShowPopup}
+                onClose={() => setIsShowPopup(false)}
+                title="Оформление"
+            >
+                <Order />
+            </PopUp>
         </StyledProductPage>
     );
 }

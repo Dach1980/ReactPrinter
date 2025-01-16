@@ -11,6 +11,7 @@ const valueStyle = css`
 `;
 
 export const StyledProductPage = styled.article`
+  width: 600px;
   margin: ${(props) => props.theme.indent};
   padding: ${(props) => props.theme.indent};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -21,7 +22,6 @@ export const StyledProductPage = styled.article`
 
 export const Header = styled.header`
   margin-bottom: ${(props) => props.theme.indent};
-
 `;
 
 export const ProductWrapper = styled.section`
@@ -31,7 +31,7 @@ export const ProductWrapper = styled.section`
 
 export const ProductInfo = styled.div`
   margin-left: ${(props) => props.theme.indent};
-  border-left: 1px solid #888888;
+  border-left: 1px solid #888;
   box-sizing: border-box;
   padding-left: ${(props) => props.theme.indent};
   margin-bottom: ${(props) => props.theme.indent};

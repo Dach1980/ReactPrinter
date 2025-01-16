@@ -17,7 +17,7 @@ export const product = {
       text: "Цену бы пониже"
     },
     {
-      d: 2,
+      id: 2,
       author: "Дима",
       text: "А где покупать расходники"
     }

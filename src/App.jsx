@@ -7,7 +7,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <ProductPage product={product} />
+      <ProductPage product={product} showInfoInAccordion/>
     </ThemeProvider>
 
   )
