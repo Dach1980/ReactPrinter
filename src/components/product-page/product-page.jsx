@@ -5,7 +5,7 @@ import Description from "../description/description.jsx";
 import Popularity from "../popularity/popularity.jsx";
 import Tabs from "../tabs/tabs.jsx";
 import Title from "../title/title.jsx";
-import { Image } from "./../elements"
+import Slider from "../slider/slider.jsx"
 import {
     StyledProductPage,
     Header,
@@ -19,7 +19,7 @@ import {
 } from "./styled";
 import Order from "../order/order.jsx";
 import Accordion from "../accordion/accordion.jsx";
-import PopUp from "../../popup/popup.jsx";
+import PopUp from "./../popup/popup.jsx";
 
 const MAX_TEXT_SIZE = 200;
 const COMMENTS_COUNT = 3;
@@ -35,22 +35,22 @@ function ProductPage({ product, showInfoInAccordion }) {
     const tabs = [
         {
             title: "Описание",
-            content: <Description 
-            text={
-                isShowAllDescription
-                ? product.description
-                : product.description.slice(0, MAX_TEXT_SIZE)
-            } 
-            onShowMore={() => setIsShowAllDescription(!isShowAllDescription)}
-            isShowAllDescription={isShowAllDescription}
+            content: <Description
+                text={
+                    isShowAllDescription
+                        ? product.description
+                        : product.description.slice(0, MAX_TEXT_SIZE)
+                }
+                onShowMore={() => setIsShowAllDescription(!isShowAllDescription)}
+                isShowAllDescription={isShowAllDescription}
             />
         },
         {
             title: "Комментарии",
-            content: <Comments 
-            comments={product.comments.slice(0, commentsShow)} 
-            onShowMore={() => setCommentsShow(commentsShow + COMMENTS_COUNT)}
-            allCommentsLength={product.comments.length}
+            content: <Comments
+                comments={product.comments.slice(0, commentsShow)}
+                onShowMore={() => setCommentsShow(commentsShow + COMMENTS_COUNT)}
+                allCommentsLength={product.comments.length}
             />
         }
     ];
@@ -62,13 +62,7 @@ function ProductPage({ product, showInfoInAccordion }) {
                 <Code>{product.code}</Code>
             </Header>
             <ProductWrapper>
-                <Image
-                    width="200"
-                    height="257"
-                    maxWidth="200"
-                    src={product.src}
-                    alt={product.name}
-                />
+                <Slider images={product.images} />
                 <ProductInfo>
                     <ProductInfoLine>
                         Цена:{" "}

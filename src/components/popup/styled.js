@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "../components/button/button";
+import Button from "../button/button";
 export const Wrapper = styled.div`
   border: 1px solid black;
   padding: 15px;
