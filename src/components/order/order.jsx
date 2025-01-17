@@ -1,19 +1,50 @@
+import { useState } from "react";
 import Button from "./../button/button";
 import { Label } from "./styled";
 
 function Order() {
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+    const onChange = (evt, setChange) => setChange(evt.target.value);
+    const isButtonEnable = name && phone && address;
+
     return (
         <form>
             <Label>
-                Имя: <input />
+                Имя: {" "}
+                <input 
+                name="name"
+                value={name}
+                onChange={(evt) => onChange(evt, setName)}
+                />
             </Label>
             <Label>
-                Телефон: <input type="tel" />
+                Телефон: {" "}
+                <input 
+                name="phone"
+                type="tel" 
+                value={phone}
+                onChange={(evt) => onChange(evt, setPhone)}
+                />
             </Label>
             <Label>
-                Адрес доставки: <input />
+                Адрес доставки: {" "}
+                <input
+                name="adress"
+                value={address}
+                onChange={(evt) => onChange(evt, setAddress)}
+                />
             </Label>
-            <Button>Оформить</Button>
+            <Button
+              disabled={!isButtonEnable}
+              onClick={(evt) => {
+                evt.preventDefault();
+                console.log(
+                  `${name}, спасибо за заказ. Мы доставим его как можно скорее по адресу: ${address}`
+                )
+              }}
+            >Оформить</Button>
         </form>
     );
 }
