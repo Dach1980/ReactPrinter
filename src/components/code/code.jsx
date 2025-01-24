@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Code = styled.span.attrs((props) => ({
-    children: `Артизкул: ${props.children}`
+    children: `Артикул: ${props.children}`
 }))`
 color: ${(props) =>props.theme.textColorMuted};
 font-size: 12px;

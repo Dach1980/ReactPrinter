@@ -6,6 +6,10 @@ import Popularity from "../popularity/popularity.jsx";
 import Tabs from "../tabs/tabs.jsx";
 import Title from "../title/title.jsx";
 import Slider from "../slider/slider.jsx"
+import Order from "../order/order.jsx";
+import Accordion from "../accordion/accordion.jsx";
+import PopUp from "./../popup/popup.jsx";
+
 import {
     StyledProductPage,
     Header,
@@ -17,9 +21,6 @@ import {
     PageFullPrice,
     DeliveryValue
 } from "./styled";
-import Order from "../order/order.jsx";
-import Accordion from "../accordion/accordion.jsx";
-import PopUp from "./../popup/popup.jsx";
 
 const MAX_TEXT_SIZE = 200;
 const COMMENTS_COUNT = 3;
